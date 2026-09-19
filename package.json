@@ -1,0 +1,40 @@
+{
+  "name": "http-cache-semantics-kernel",
+  "version": "0.1.0",
+  "description": "RFC 9111 HTTP caching semantics kernel: storability, freshness, Vary, revalidation. No networking, no storage backend.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test dist-test/test/",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist dist-test"
+  },
+  "keywords": [
+    "http",
+    "cache",
+    "rfc9111",
+    "rfc7234",
+    "freshness",
+    "stale-while-revalidate"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "typescript": "5.9.3"
+  }
+}
